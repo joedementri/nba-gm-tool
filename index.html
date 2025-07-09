@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NBA Front Office Simulator</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    th.sortable {
+      cursor: pointer;
+    }
+    th.sortable::after {
+      content: ' \25B4'; /* up triangle by default */
+      font-size: 0.7em;
+    }
+    th.sortable.sorted-desc::after {
+      content: ' \25BE'; /* down triangle */
+    }
+    th.sortable.sorted-reset::after {
+      content: ''; /* no symbol */
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -22,18 +37,27 @@
       <table id="rosterTable">
         <thead>
           <tr>
-            <th>Player</th>
-            <th>Salary</th>
-            <th>Contract Years</th>
-            <th>Stats</th>
-            <th>Action</th>
+            <th class="sortable" data-key="Player">Player</th>
+            <th class="sortable" data-key="Salary">Salary</th>
+            <th class="sortable" data-key="Contract">Contract Years</th>
+            <th class="sortable" data-key="Age">Age</th>
+            <th class="sortable" data-key="Pos">Pos</th>
+            <th class="sortable" data-key="Ht">Ht</th>
+            <th class="sortable" data-key="Wt">Wt</th>
+            <th class="sortable" data-key="Exp">Exp</th>
+            <th class="sortable" data-key="G">G</th>
+            <th class="sortable" data-key="GS">GS</th>
+            <th class="sortable" data-key="MP">MP</th>
+            <th class="sortable" data-key="PTS">PTS</th>
+            <th class="sortable" data-key="AST">AST</th>
+            <th class="sortable" data-key="TRB">TRB</th>
           </tr>
         </thead>
         <tbody></tbody>
         <tfoot>
           <tr>
             <td colspan="1"><strong>Total Cap</strong></td>
-            <td colspan="4" id="totalCap"></td>
+            <td colspan="13" id="totalCap"></td>
           </tr>
         </tfoot>
       </table>
