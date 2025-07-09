@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NBA Front Office Simulator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>NBA Front Office Simulator</h1>
+    <div class="custom-dropdown">
+      <div id="selectedTeam" class="dropdown-selected">Select a Team</div>
+      <div id="teamDropdown" class="dropdown-items hidden"></div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2 id="teamTitle">Select a Team</h2>
+      <div id="teamLogoContainer"></div>
+      <table id="rosterTable">
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th>Salary</th>
+            <th>Contract Years</th>
+            <th>Stats</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="1"><strong>Total Cap</strong></td>
+            <td colspan="4" id="totalCap"></td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <section>
+      <h2>Team Actions</h2>
+      <button onclick="handleTrade()">Make a Trade</button>
+      <button onclick="handleExtend()">Extend Contract</button>
+      <button onclick="handleSignFreeAgent()">Sign Free Agent</button>
+      <button onclick="handleWaive()">Waive/Tender Player</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
